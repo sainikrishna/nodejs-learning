@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
 
+const port = process.env.PORT || 8080;
+
 const app = express();
 
 console.log(path.join(__dirname, '../public'));
@@ -39,6 +41,6 @@ app.get("*", (req, res) => {
     });
 });
 
-app.listen(8080, () => {
-    console.log("Listining the port of 8080")
+app.listen(port, () => {
+    console.log(`Listining the port of ${port}`)
 })
